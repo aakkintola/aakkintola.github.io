@@ -1,5 +1,8 @@
-tutorial_button = document.querySelector("a.btn.btn-outline-white.btn-lg.waves-effect.waves-light")
+let tutorial_button = document.querySelector("div.card-body a.btn")
 
-function test(){
-    tutorial_button.addEventListener("click", function(){ console.log("Hello World!"); });
-}
+tutorial_button.forEach(function(button){
+    button.addEventListener('click', (event) =>
+    mixpanel.track(
+        "Clicked Start Free Tutorial"
+    ))
+})
